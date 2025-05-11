@@ -1,0 +1,19 @@
+# Flex and Bison generated files
+lex.yy.c
+parser.tab.c
+parser.tab.h
+
+# Compiled binary
+parser
+
+# Object files
+*.o
+
+# macOS system files
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~

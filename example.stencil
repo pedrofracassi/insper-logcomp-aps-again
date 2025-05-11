@@ -1,0 +1,15 @@
+var a = 1;
+
+func abs(var a) {
+  if (a < 0) {
+    return -a;
+  } else {
+    return a;
+  }
+}
+
+stencil main {
+  paint abs(x);
+}
+
+apply main at [0, 0];

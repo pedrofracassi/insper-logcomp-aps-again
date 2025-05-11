@@ -1,0 +1,25 @@
+<Expression> ::= <Term> (("+" | "-" | "||") <Term>)*
+<RelExp> ::= <Expression> (("==" | ">" | "<") <Expression>)*
+<Term> ::= <Factor> (("*" | "/" | "&&") <Factor>)*
+<Number> ::= <Digit>+
+<Factor> ::= <Number> | (("+" | "-" | "!") <Factor>) | ("(" <RelExp> ")") | <Identifier> | <FuncCall>
+<Digit> ::= [0-9]
+<Letter> ::= [a-z] | [A-Z]
+<Assignment> ::= <Identifier> "=" <RelExp>
+<VarDec> ::= "var" <Identifier> ("=" <Expression>)? ("," "var" <Identifier> ("=" <Expression>)?)*
+<Block> ::= <RBracket> <Statement>+ <LBracket>
+<RBracket> ::= "{"
+<LBracket> ::= "}"
+<Statement> ::= ((<Assignment> | <FuncCall>) ";") | <Block> | <If> | <FuncDec> | <Return> | <VarDec> | <Paint> | <Apply> | <Stencil>
+<If> ::= "if" "(" <RelExp> ")" <Statement> ("else" <Statement>)?
+<FuncDec> ::= "func" <Identifier> "(" <VarDec>? ")" <Block>
+<FuncCall> ::= <Identifier> "(" (<Expression> ("," <Expression>)*)? ")"
+<Identifier> ::= <Letter>+
+<Stencil> ::= "stencil" <Identifier> <Block>
+<Apply> ::= "apply" <Identifier> <Directive>*
+<Coordinate> ::= "[" <Factor> "," <Factor> "]"
+<Directive> ::= <LocationDirective> | <SizeDirective>
+<LocationDirective> ::= "at" <Coordinate>
+<SizeDirective> ::= "size" <Factor>
+<Paint> ::= "paint" <Factor>
+<Return> ::= "return" <Expression>
