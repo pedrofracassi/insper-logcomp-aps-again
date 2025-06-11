@@ -17,3 +17,7 @@ parser
 .idea/
 *.swp
 *~
+
+# Output directory
+stencil-run
+test.ll

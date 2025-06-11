@@ -1,6 +1,7 @@
 %{
-#include "parser.tab.h"
 #include <stdio.h>
+#include "src/ast.h"
+#include "out/parser.tab.h"
 %}
 
 %%

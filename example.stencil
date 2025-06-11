@@ -1,15 +1,20 @@
-var a = 1;
-
-func abs(var a) {
-  if (a < 0) {
-    return -a;
+func abs(var x) {
+  if (x < 0) {
+    return -x;
   } else {
-    return a;
+    return x;
   }
 }
 
-stencil main {
-  paint abs(x);
+stencil circle {
+  var dx = x - 6;
+  var dy = y - 6;
+  var dist = dx * dx + dy * dy;
+  if (dist > 36) {
+    paint 0;
+  } else {
+    paint abs(x+y);
+  }
 }
 
-apply main at [0, 0];
+apply circle at [2, 2];

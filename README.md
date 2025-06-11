@@ -67,6 +67,52 @@ var b = 2;
 apply main at [a, b];
 ```
 
+## Exemplos
+
+### Círculo
+
+```
+stencil circle {
+  var dx = x - 6;
+  var dy = y - 6;
+  var dist = dx * dx + dy * dy;
+  if (dist > 36) {
+    paint 0;
+  } else {
+    paint 1;
+  }
+}
+
+apply circle at [2, 2];
+```
+
+### Círculo arco-íris
+
+![image](./circulo.png)
+
+```
+func abs(var x) {
+  if (x < 0) {
+    return -x;
+  } else {
+    return x;
+  }
+}
+
+stencil circle {
+  var dx = x - 6;
+  var dy = y - 6;
+  var dist = dx * dx + dy * dy;
+  if (dist > 36) {
+    paint 0;
+  } else {
+    paint abs(x+y);
+  }
+}
+
+apply circle at [2, 2];
+```
+
 ## Gramática
 
 ```ebnf
