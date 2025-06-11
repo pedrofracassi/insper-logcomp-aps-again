@@ -6,15 +6,9 @@ func abs(var x) {
   }
 }
 
-stencil circle {
-  var dx = x - 6;
-  var dy = y - 6;
-  var dist = dx * dx + dy * dy;
-  if (dist > 36) {
-    paint 0;
-  } else {
-    paint abs(x+y);
-  }
+stencil rainbow {
+  paint abs(x+y);
 }
 
-apply circle at [2, 2];
+apply rainbow at [10, 5] size 5;
+apply rainbow at [5, 5] size 5;
