@@ -6,6 +6,18 @@ Linguagem para criação de Pixel Arts com loops.
 
 ## Como utilizar
 
+### Compilar
+
+```bash
+./parser < example.stencil > test.ll && make stencil-run
+```
+
+### Executar
+
+```bash
+./stencil-run
+```
+
 ### Stencils
 
 ```py
